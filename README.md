@@ -23,12 +23,12 @@ The base container with the environment for the Zephyr SDK itself. Without build
 
 ### zephyr-sdk-ada-arm
 The container inherited from *zephyr-sdk-ada-base*.
-The Dockerfile build also makes the final build stage of toolchain for *arm* architecture in separate internal *zephyr-sdk-ada-build-arm* Docker stage based on *zephyr-sdk-ada-build-base*.
+The Dockerfile build also makes the final build stage of the toolchain for *arm* architecture in separate internal *zephyr-sdk-ada-build-arm* Docker stage based on *zephyr-sdk-ada-build-base*.
 
 ### zephyr-sdk-ada-riscv64
-Same as *zephyr-sdk-ada-arm* but for *riscv64* architecrure.
+Same as *zephyr-sdk-ada-arm* but for *riscv64* architecture.
 
-## Quick start
+## Quickstart
 Run Docker image. For example *arm* toolchain version
 
     docker run -it zephyrada/zephyr-sdk-ada-arm
@@ -50,7 +50,7 @@ Go to sample and build it
 You can use make targets.
 
 ### Note about registry
-Pass REGISTRY_BASE="<registry_base>" to the make argument if needs to replace container prefix.
+Pass REGISTRY_BASE="<registry_base>" to make argument if needs to replace container prefix.
 For example:
 
     make REGISTRY_BASE="" base
@@ -61,17 +61,17 @@ will build *zephyr-sdk-ada-base*
 
 will build *myname/zephyr-sdk-ada-base*
 
-be carefill to keep slash at the end of REGISTRY_BASE
+be careful to keep slash at the end of REGISTRY_BASE
 
 
 ### Build commands
 
-Build base containers by invoke:
+Build base containers by invoking:
 
     make base
     make build-base
 
-Build container with target architecture. For example:
+Build a container with the target architecture. For example:
 
     make arm
 
