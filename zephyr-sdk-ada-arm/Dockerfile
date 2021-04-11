@@ -32,7 +32,7 @@ RUN CT_PREFIX=${OUTPUT_DIR} ${CT_NG} build.$(nproc)
 # final image
 #
 
-FROM zephyrada/zephyr-sdk-ada-base:v0.1.0-alpha
+FROM zephyrada/zephyr-sdk-ada-base:v0.2.0-alpha
 
 ARG TARGET=arm
 

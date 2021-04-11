@@ -7,6 +7,8 @@ ARG CMAKE_ADA_MODULES_GIT_URL=https://github.com/zephyr-ada/cmake-ada.git
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+    locales \
+    netcat \
     git \
     cmake \
     ninja-build \
@@ -26,6 +28,14 @@ RUN apt-get update && \
     libsdl2-dev \
     ssh \
     clangd
+
+# Set the locale
+RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
+    locale-gen
+
+ENV LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8
 
 # install west
 

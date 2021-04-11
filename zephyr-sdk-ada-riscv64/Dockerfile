@@ -28,7 +28,7 @@ RUN cat .config | grep CT_EXPERIMENTAL && \
 
 RUN CT_PREFIX=${OUTPUT_DIR} ${CT_NG} build.$(nproc)
 
-FROM zephyrada/zephyr-sdk-ada-base:v0.1.0-alpha
+FROM zephyrada/zephyr-sdk-ada-base:v0.2.0-alpha
 
 ARG TARGET=riscv64
 
