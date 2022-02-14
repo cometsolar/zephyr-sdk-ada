@@ -71,6 +71,8 @@ RUN git clone -b ${CROSSTOOL_NG_VERSION}  https://github.com/zephyrproject-rtos/
 # https://github.com/crosstool-ng/crosstool-ng/issues/1216
 COPY patches/0001-Enable-CC_LANG_ADA-for-BARE_METAL.patch /home/build-user/sdk-ng/patches
 COPY patches/0002-Add-disable-libada-in-CC_GCC_EXTRA_CONFIG_ARRAY.patch /home/build-user/sdk-ng/patches
+COPY patches/0003-isl-fix.patch /home/build-user/sdk-ng/patches
+COPY patches/0004-expat-url-fix.patch /home/build-user/sdk-ng/patches
 # Fix build error when libada disabled from compilation
 # https://gcc.gnu.org/legacy-ml/gcc-patches/2019-09/msg01665.html
 COPY patches/gcc/9.2.0/0001-gcc-lang-no-install-gnatlib.patch /home/build-user/sdk-ng/patches/gcc/9.2.0

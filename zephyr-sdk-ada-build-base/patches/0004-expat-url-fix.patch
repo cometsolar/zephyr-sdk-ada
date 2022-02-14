@@ -1,0 +1,24 @@
+From eb9074cc9f95d67c4e92c67aa5b63bdbae00abf8 Mon Sep 17 00:00:00 2001
+From: Philipp Wagner <phw@lowrisc.org>
+Date: Tue, 3 Sep 2019 14:06:07 +0100
+Subject: [PATCH] Expat: Provide a non-sourceforge download link
+
+The same binaries are now hosted on GitHub releases (and looking at the
+homepage, that's the only download location they are offering). Use that
+mirror at least as an option.
+---
+ packages/expat/package.desc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/expat/package.desc b/packages/expat/package.desc
+index 14c197d9d..84dba8ff3 100644
+--- a/packages/expat/package.desc
++++ b/packages/expat/package.desc
+@@ -1,6 +1,6 @@
+ repository='git https://github.com/libexpat/libexpat.git'
+ repository_subdir='expat'
+ bootstrap='./buildconf.sh && make -C doc all'
+-mirrors='http://downloads.sourceforge.net/project/expat/expat/${CT_EXPAT_VERSION}'
++mirrors='http://downloads.sourceforge.net/project/expat/expat/${CT_EXPAT_VERSION} https://github.com/libexpat/libexpat/releases/download/R_${CT_EXPAT_VERSION//./_}'
+ archive_formats='.tar.bz2'
+ relevantpattern='*.*|.'
