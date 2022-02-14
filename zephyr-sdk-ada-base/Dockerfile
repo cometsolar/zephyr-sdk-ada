@@ -75,11 +75,11 @@ RUN apt-get update && apt install -y --no-install-recommends \
 
 ARG JLINK_DEB=JLink_Linux_x86_64.deb
 
-RUN wget --progress=dot:giga  \
-    --post-data 'accept_license_agreement=accepted&non_emb_ctr=confirmed' \
-    https://www.segger.com/downloads/jlink/${JLINK_DEB} \
-    && dpkg -i ${JLINK_DEB} \
-    && rm ${JLINK_DEB}
+# RUN wget --progress=dot:giga  \
+#     --post-data 'accept_license_agreement=accepted&non_emb_ctr=confirmed' \
+#     https://www.segger.com/downloads/jlink/${JLINK_DEB} \
+#     && dpkg -i ${JLINK_DEB} \
+#     && rm ${JLINK_DEB}
 
 ENV PATH="/opt/SEGGER/JLink:${PATH}"
 
